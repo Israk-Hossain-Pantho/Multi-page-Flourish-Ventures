@@ -63,8 +63,9 @@
       </div>
       <div class="form-card">
         <h3>Send an enquiry</h3>
-        <p>This opens your email app with the message ready to send.</p>
-        <form id="contactForm">
+        <p>Fill in the form and we will reply by email.</p>
+        <form id="contactForm" novalidate>
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="field-row">
             <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
             <div class="field"><label for="company">Company</label><input id="company" name="company"></div>
@@ -72,7 +73,8 @@
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
           <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" placeholder="e.g. Sampling request"></div>
           <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-          <button type="submit" class="btn btn-primary">Open email to send <span class="btn-arrow">→</span></button>
+          <button type="submit" class="btn btn-primary" id="formBtn">Send message <span class="btn-arrow">→</span></button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
