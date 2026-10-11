@@ -16,7 +16,7 @@ if (form) {
     const d = new FormData(form);
     const subject = encodeURIComponent(d.get('subject') || 'Enquiry from website');
     const body = encodeURIComponent(
-      `Name: ${d.get('name')}\nCompany: ${d.get('company') || '-'}\nEmail: ${d.get('email')}\n\n${d.get('message')}`
+      `Name: ${d.get('name')}\nCompany: ${d.get('company') || '-'}\n\n${d.get('message')}`
     );
     window.location.href = `mailto:israkhossainpantho105@gmail.com?subject=${subject}&body=${body}`;
   });
